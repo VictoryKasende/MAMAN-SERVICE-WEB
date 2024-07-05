@@ -1,21 +1,22 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
-
+{% load static %}
 {% block content %}
-  <div class='row'>
-    <div class="col-11 col-md-4 mx-auto mt-5">
-		<h1>Log In</h1>
-    	<form method="POST">
-			{% csrf_token %}
-			{{ form|crispy }}
-			<div class="form-group">
-				<button class="btn btn-secondary" type="submit">Sign In</button>
-			</div>
-		</form>
-		<div class="pt-3">
-			<small class="text-muted">Need An Account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a></small>
-		</div>
-	</div>
-    </div>
-  </div>
+    <section class="py-4 py-md-5 my-5">
+        <div class="container py-md-5">
+            <div class="row">
+                <div class="col-md-6 text-center"><img class="img-fluid w-100" src="{% static "users/assets/img/header.jpeg"%}"></div>
+                <div class="col-md-5 col-xl-4 text-center text-md-start">
+                    <h2 class="display-6 fw-bold mb-5"><span class="underline pb-1"><strong>Login</strong></span></h2>
+                    <form method="post" data-bs-theme="light">
+                        {% csrf_token %}
+                        <div class="mb-3">{{ form.username }}</div>
+                        <div class="mb-3">{{ form.password }}</div>
+                        <div class="mb-5"><button class="btn btn-primary shadow" type="submit">Se connecter</button></div>
+                    </form>
+                    <p class="text-muted"><a href="forgotten-password.html">Mot de passe oublie?</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock content %}

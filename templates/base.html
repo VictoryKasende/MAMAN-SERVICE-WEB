@@ -1,19 +1,20 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maman-Service</title>
-
-    <link rel="stylesheet" href="https://bootswatch.com/5/simplex/bootstrap.min.css">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static "users/assets/bootstrap/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
 </head>
 <body>
-    
+    {% include  'users/nav.html'%}
     {% block content %}
     {% endblock content %}
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="{% static "users/assets/bootstrap/js/bootstrap.min.js"%}"></script>
+    <script src="{% static "users/assets/js/startup-modern.js"%}"></script>
 </body>
 </html>

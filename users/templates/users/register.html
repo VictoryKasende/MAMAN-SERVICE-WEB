@@ -1,17 +1,29 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
-
+{% load static %}
 {% block content %}
-  
-<div class="row">
-  <div class="col-11 col-md-4 mx-auto mt-5">
-    <h1>Sign up</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button class="btn btn-secondary" type="submit">Sign Up</button>
-      </form>
-  </div>
-</div>
-  
-{% endblock %}
+    <section class="py-4 py-md-5 my-5">
+        <div class="container py-md-5">
+            <div class="row">
+                <div class="col-md-6 text-center"><img class="img-fluid w-100" src="{% static "users/assets/img/header.jpeg"%}"></div>
+                <div class="col-md-5 col-xl-4 text-center text-md-start">
+                    <h2 class="display-6 fw-bold mb-5"><span class="underline pb-1"><strong>Sign up</strong></span></h2>
+                    <form method="post" data-bs-theme="light">
+                        {% csrf_token %}
+                        <div class="mb-3">{{ form.username }}</div>
+                        <div class="mb-3">{{ form.email }}</div>
+                        <div class="mb-3">{{ form.password1 }}</div>
+                        <div class="mb-3">{{ form.password2 }}</div>
+                        <div class="mb-5"><button class="btn btn-primary shadow" type="submit">Creer un compte</button></div>
+                    </form>
+                    <p class="text-muted">Avez un compte ? <a href="{% url 'login'%}">Log in&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-arrow-narrow-right">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l14 0"></path>
+                                <path d="M15 16l4 -4"></path>
+                                <path d="M15 8l4 4"></path>
+                            </svg></a>&nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
