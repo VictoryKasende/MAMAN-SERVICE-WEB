@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<section class="py-4 py-md-5 my-5">
+    <div class="container py-md-5">
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <img class="img-fluid w-100" src="{% static "users/assets/img/header.jpeg" %}">
+            </div>
+            <div class="col-md-5 col-xl-4 text-center text-md-start">
+                <h2 class="display-6 fw-bold mb-5"><span class="underline pb-1"><strong>Souscrire</strong></span></h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">{{ form.account_number|as_crispy_field }}</div>
+                    <div class="mb-3">{{ form.plan|as_crispy_field }}</div>
+                    <div class="mb-5">
+                        <button class="btn btn-primary shadow" type="submit">Souscrire</button>
+                    </div>
+                </form>
+                <p style="color: red">Un email vous sera envoyer pour deposer l'argent </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="py-4 py-md-5 my-5">
+    <div class="container py-md-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-xl-6 text-center">
+                <h1 class="display-6 fw-bold mb-4">Merci pour votre souscription !</h1>
+                <p class="text-muted mb-5">Nous avons bien reçu vos informations. Vous serez bientôt contacté pour deposer l'argent.</p>
+                <a href="{% url 'index' %}" class="btn btn-primary">Retour à l'accueil</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

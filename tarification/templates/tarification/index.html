@@ -26,7 +26,7 @@ Ne manquez pas les nouvelles fonctionnalités et les mises à jour. Abonnez-vous
         <div class="container py-4 py-xl-5">
             <div class="row gy-4 gy-md-0">
                 <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
-                    <div><img class="rounded img-fluid fit-cover" style="min-height: 300px;" src="{% static 'users/assets/img/header.jpg' %}" width="800"></div>
+                    <div><img class="rounded img-fluid fit-cover" style="min-height: 300px;" src="{% static 'users/assets/img/section-famille.jpg' %}" width="800"></div>
                 </div>
                 <div class="col">
                     <div style="max-width: 450px;">
@@ -87,7 +87,7 @@ Ne manquez pas les nouvelles fonctionnalités et les mises à jour. Abonnez-vous
                                                 <path d="M5 12l5 5l10 -10"></path>
                                             </svg></span><span>Pour 2 comptes seulement</span></li>
                                 </ul>
-                            </div><a class="btn btn-primary" role="button" href="#">Souscrire</a>
+                            </div><a class="btn btn-primary" role="button" href="{% url 'standard_subscription' %}">Souscrire</a>
                         </div>
                     </div>
                 </div>
@@ -110,7 +110,7 @@ Ne manquez pas les nouvelles fonctionnalités et les mises à jour. Abonnez-vous
                                                 <path d="M5 12l5 5l10 -10"></path>
                                             </svg></span><span>Pour 4 comptes seulement</span></li>
                                 </ul>
-                            </div><a class="btn btn-warning" role="button" href="#">Souscrire</a>
+                            </div><a class="btn btn-warning" role="button" href="{% url 'family_restricted_subscription' %}">Souscrire</a>
                         </div>
                     </div>
                 </div>
@@ -134,7 +134,7 @@ Ne manquez pas les nouvelles fonctionnalités et les mises à jour. Abonnez-vous
                                                 <path d="M5 12l5 5l10 -10"></path>
                                             </svg></span><span>Pour 6 comptes seulement</span></li>
                                 </ul>
-                            </div><a class="btn btn-primary" role="button" href="#">Souscrire</a>
+                            </div><a class="btn btn-primary" role="button" href="{% url 'family_extended_subscription' %}">Souscrire</a>
                         </div>
                     </div>
                 </div>
