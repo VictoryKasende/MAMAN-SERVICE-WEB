@@ -21,3 +21,7 @@ class ContactForm(forms.ModelForm):
             'email': forms.EmailInput(attrs={'class': 'shadow form-control', 'placeholder': 'Email', 'required': True}),
             'message': forms.Textarea(attrs={'class': 'shadow form-control', 'rows': 6, 'placeholder': 'Message', 'required': True}),
         }
+
+class PaymentForm(forms.Form):
+    amount = forms.DecimalField(max_digits=10, decimal_places=2)
+    phone_number = forms.CharField(max_length=15, help_text="Entrez votre numéro de mobile money")
